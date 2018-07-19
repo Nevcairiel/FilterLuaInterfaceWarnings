@@ -1,0 +1,6 @@
+## Interface: 80000
+## Title: !!NoWarnings
+## Description: Disable Lua Warnings
+## OptionalDeps: !BugGrabber
+
+NoWarnings.lua
