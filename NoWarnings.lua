@@ -11,6 +11,6 @@ function(f, ev, warnType, warnMessage)
 	if warnMessage:match("^Couldn't open") or warnMessage:match("^Error loading") or warnMessage:match("^%(null%)") then
 		return
 	end
-	geterrorhandler()(warnMessage)
+	geterrorhandler()(warnMessage, true)
 end)
 f:RegisterEvent("LUA_WARNING")
