@@ -1,4 +1,4 @@
-## Interface: 90001
+## Interface: 90100
 ## Title: !!NoWarnings
 ## Description: Disable Lua Warnings
 ## OptionalDeps: !BugGrabber
