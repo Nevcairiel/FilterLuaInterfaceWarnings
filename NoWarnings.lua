@@ -15,3 +15,5 @@ function(f, ev, warnType, warnMessage)
 	geterrorhandler()(warnMessage, true)
 end)
 f:RegisterEvent("LUA_WARNING")
+
+BUGGRABBER_ERRORS_PER_SEC_BEFORE_THROTTLE = 10000
