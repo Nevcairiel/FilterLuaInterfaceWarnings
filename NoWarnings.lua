@@ -8,7 +8,7 @@ end
 
 f:SetScript("OnEvent",
 function(f, ev, warnType, warnMessage)
-	if warnMessage:match("^Couldn't open") or warnMessage:match("^Error loading") or warnMessage:match("^%(null%)") then
+	if warnMessage:match("^Couldn't open") or warnMessage:match("^Error loading") or warnMessage:match("^%(null%)") or warnMessage:match("%(null%)$") then
 		return
 	end
 	geterrorhandler()(warnMessage, true)
