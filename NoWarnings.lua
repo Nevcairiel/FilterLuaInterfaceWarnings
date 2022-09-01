@@ -8,6 +8,7 @@ end
 
 f:SetScript("OnEvent",
 function(f, ev, warnType, warnMessage)
+	warnMessage = warnMessage:gsub("Interface\\FrameXML\\Bindings.xml:%d+ ", "")
 	if warnMessage:match("^Couldn't open") or warnMessage:match("^Error loading") or warnMessage:match("^%(null%)") or warnMessage:match("%(null%)$") then
 		return
 	end
