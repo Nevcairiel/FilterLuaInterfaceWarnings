@@ -8,8 +8,16 @@ end
 
 f:SetScript("OnEvent",
 function(f, ev, warnType, warnMessage)
-	warnMessage = warnMessage:gsub("Interface\\FrameXML\\Bindings.xml:%d+ ", "")
-	if warnMessage:match("^Couldn't open") or warnMessage:match("%.xml:%d+ Couldn't open Interface") or warnMessage:match("^Error loading") or warnMessage:match("%.xml:%d+ Error loading Interface") or warnMessage:match("^%(null%)") or warnMessage:match("%(null%)$") then
+	-- scrube nonsense from the message
+	warnMessage = warnMessage:gsub("Interface\\FrameXML\\Bindings.xml:%d+ ", ""):trim()
+
+	-- filter out missing file warnings or broken "(null)" warnings
+	if warnMessage:find("^Couldn't open")
+	or warnMessage:find("%.xml:%d+ Couldn't open Interface")
+	or warnMessage:find("^Error loading")
+	or warnMessage:find("%.xml:%d+ Error loading Interface")
+	or warnMessage:find("^%(null%)")
+	or warnMessage:find("%(null%)$") then
 		return
 	end
 	geterrorhandler()(warnMessage, true)
