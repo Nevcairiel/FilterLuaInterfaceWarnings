@@ -13,9 +13,11 @@ function(f, ev, warnType, warnMessage)
 
 	-- filter out missing file warnings or broken "(null)" warnings
 	if warnMessage:find("^Couldn't open")
-	or warnMessage:find("%.xml:%d+ Couldn't open Interface")
+	or warnMessage:find("%.xml:%d+ Couldn't open ")
+	or warnMessage:find("%.toc:%d+ Couldn't open ")
 	or warnMessage:find("^Error loading")
-	or warnMessage:find("%.xml:%d+ Error loading Interface")
+	or warnMessage:find("%.xml:%d+ Error loading ")
+	or warnMessage:find("%.lua:%d+ Error loading ")
 	or warnMessage:find("^%(null%)")
 	or warnMessage:find("%(null%)$") then
 		return
