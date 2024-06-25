@@ -18,6 +18,7 @@ function(f, ev, warnType, warnMessage)
 	or warnMessage:find("^Error loading")
 	or warnMessage:find("%.xml:%d+ Error loading ")
 	or warnMessage:find("%.lua:%d+ Error loading ")
+	or warnMessage:find("%.toc:%d+ Error loading ")
 	or warnMessage:find("^%(null%)")
 	or warnMessage:find("%(null%)$") then
 		return
