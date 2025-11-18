@@ -7,7 +7,7 @@ for _, frame in ipairs(frames) do
 end
 
 f:SetScript("OnEvent",
-function(f, ev, warnType, warnMessage)
+function(f, ev, warnMessage)
 	-- scrube nonsense from the message
 	warnMessage = warnMessage:gsub("Interface\\FrameXML\\Bindings.xml:%d+ ", ""):trim()
 
