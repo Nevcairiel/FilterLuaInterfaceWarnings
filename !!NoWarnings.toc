@@ -1,4 +1,4 @@
-## Interface: 110205, 120000
+## Interface: 120100,120105,11509,50504,20506,16001
 ## Title: !!NoWarnings
 ## Description: Disable Lua Warnings
 ## OptionalDeps: !BugGrabber
